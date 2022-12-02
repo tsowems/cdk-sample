@@ -6,7 +6,7 @@ on:
     - main
     types: [closed]
 
-jobs
+jobs:
   build:
     if: github.event.pull_request.merged == true
     name: Deploy AWS CDK Typescript Stack

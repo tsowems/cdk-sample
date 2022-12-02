@@ -5,7 +5,7 @@ on:
     branches:
     - main
 
-jobs
+jobs:
   build:
     name: Build Test AWS CDK Typescript Stack
     runs-on: ubuntu-latest
