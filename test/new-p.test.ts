@@ -1,17 +1,19 @@
-// import * as cdk from 'aws-cdk-lib';
-// import { Template } from 'aws-cdk-lib/assertions';
-// import * as NewP from '../lib/new-p-stack';
+import * as cdk from 'aws-cdk-lib';
+import { Template } from 'aws-cdk-lib/assertions';
+import * as NewP from '../lib/new-p-stack';
 
-// example test. To run these tests, uncomment this file along with the
-// example resource in lib/new-p-stack.ts
-test('SQS Queue Created', () => {
-//   const app = new cdk.App();
+
+test('confirm stack is created', () => {
+  const app = new cdk.App();
 //     // WHEN
-//   const stack = new NewP.NewPStack(app, 'MyTestStack');
+  const stack = new NewP.NewPStack(app, 'MyTestStack');
 //     // THEN
-//   const template = Template.fromStack(stack);
+  const template = Template.fromStack(stack);
 
-//   template.hasResourceProperties('AWS::SQS::Queue', {
-//     VisibilityTimeout: 300
-//   });
+  template.hasResourceProperties('AWS::Lambda::Function', {
+    functionName: 'first-cdk-lambda',
+    Runtime: 'nodejs16.x',
+    Handler: 'index.handler',
+    MemorySize: 128,
+  });
 });
