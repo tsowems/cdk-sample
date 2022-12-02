@@ -28,7 +28,7 @@ jobs:
         run: npm run build
       
       - name: Ddeploy AWS CDK Stack
-        run: "npx cdk deploy cdk-sample --ci --require-approval never --no-assest-metadata"
+        run: "npx cdk deploy NewPStack --ci --require-approval never --no-assest-metadata"
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
