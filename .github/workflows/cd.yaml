@@ -19,14 +19,13 @@ jobs:
         uses: actions/checkout@v3.1.0
 
       - name: Install Node
-        uses: actions/setup-node#v3.5.0
+        uses: actions/setup-node@v3.5.0
 
       - name: Install Dependencies
         run: npm ci
 
       - name: Build CDK Stack
         run: npm run build
-      
       
       - name: Ddeploy AWS CDK Stack
         run: "npx cdk deploy cdk-sample --ci --require-approval never --no-assest-metadata"
