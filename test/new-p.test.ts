@@ -11,9 +11,9 @@ test('confirm stack is created', () => {
   const template = Template.fromStack(stack);
 
   template.hasResourceProperties('AWS::Lambda::Function', {
-    functionName: 'first-cdk-lambda',
-    Runtime: 'nodejs16.x',
-    Handler: 'index.handler',
-    MemorySize: 128,
+    "FunctionName": "first-cdk-lambda",
+    "Handler": "index.handler",
+    "MemorySize": 128,
+    "Runtime": "nodejs16.x"
   });
 });
